@@ -100,7 +100,6 @@
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:textColorHint="@color/colorGray"
-
             android:textSize="28sp"
             tools:ignore="TouchTargetSizeCheck" />
 
