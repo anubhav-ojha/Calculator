@@ -1,15 +1,54 @@
-package com.techmaze.bmicalculator
+package com.techMaze.bmicalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_resul_t.*
 
 class resulT : AppCompatActivity() {
+    lateinit var mAdView : AdView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resul_t)
+
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        mAdView.adListener = object: AdListener() {
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                super.onAdLoaded()
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+
+                super.onAdFailedToLoad(adError)
+                mAdView.loadAd(adRequest)
+
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                super.onAdOpened()
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+                super.onAdClicked()
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        }
 
         val bmi = intent.getDoubleExtra("bmi", -1.0)
         if(bmi == -1.0)
@@ -47,4 +86,5 @@ class resulT : AppCompatActivity() {
             }
         }
     }
+
 }

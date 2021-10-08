@@ -4,6 +4,7 @@ buildscript {
         google()
         mavenCentral()
     }
+
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
@@ -12,6 +13,13 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+//These dependencies were failed to added
+//allprojects {
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

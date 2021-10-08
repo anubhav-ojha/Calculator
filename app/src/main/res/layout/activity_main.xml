@@ -114,6 +114,20 @@
         android:letterSpacing="0.2"
         android:textSize="16sp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:adSize="LARGE_BANNER"
+        app:adUnitId="ca-app-pub-2796392100927578/3727417121">
+
+    </com.google.android.gms.ads.AdView>
+
 
 </LinearLayout>
